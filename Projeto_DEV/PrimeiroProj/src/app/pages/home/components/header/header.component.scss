@@ -1,0 +1,65 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+
+  .logo {
+    width: 32px;
+    height: 32px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+  }
+
+  .search-section {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    margin-left: 2rem;
+    input {
+      border: none;
+      outline: none;
+      padding: 0.25rem;
+      font-size: 0.9rem;
+      width: 600px;
+    }
+    .search-icon {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .language-selector {
+    margin-left: auto;
+    margin-right: 1rem;
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 0.5rem;
+
+    .login {
+      padding: 0.5rem 1rem;
+      border: 1px solid black;
+      background: white;
+      color: black;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .signup {
+      padding: 0.5rem 1rem;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  }
+}
