@@ -1,0 +1,72 @@
+<div class="login-container" @fadeIn>
+    <div class="login-card" @pulse>
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <h1>MyApp</h1>
+      </div>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" @staggerIn>
+        <div class="form-item">
+          <label for="email">Email</label>
+          <input 
+            id="email" 
+            type="email" 
+            formControlName="email" 
+            placeholder="seu@email.com"
+            [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <div class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            Email inválido
+          </div>
+        </div>
+  
+        <div class="form-item">
+          <label for="password">Senha</label>
+          <div class="password-input">
+            <input 
+              id="password" 
+              [type]="showPassword ? 'text' : 'password'" 
+              formControlName="password" 
+              placeholder="••••••••"
+              [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            <button type="button" (click)="showPassword = !showPassword">
+              <i class="material-icons">{{ showPassword ? 'visibility_off' : 'visibility' }}</i>
+            </button>
+          </div>
+          <div class="error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            Mínimo 6 caracteres
+          </div>
+        </div>
+  
+        <div class="form-options">
+          <label class="checkbox">
+            <input type="checkbox" formControlName="remember">
+            <span>Lembrar-me</span>
+          </label>
+          <a href="/forgot-password" class="forgot-password">Esqueceu a senha?</a>
+        </div>
+  
+        <button 
+          type="submit" 
+          class="login-button" 
+          [disabled]="loginForm.invalid || isLoading">
+          <span *ngIf="!isLoading">Entrar</span>
+          <span *ngIf="isLoading" class="spinner"></span>
+        </button>
+      </form>
+  
+      <div class="divider">
+        <span>ou</span>
+      </div>
+  
+      <button class="google-button" (click)="googleLogin()" [disabled]="isLoading">
+        <img src="assets/google-icon.svg" alt="Google">
+        <span>Entrar com Google</span>
+      </button>
+  
+      <div class="signup-link">
+        Não tem uma conta? <a href="/signup">Cadastre-se</a>
+      </div>
+    </div>
+  </div>

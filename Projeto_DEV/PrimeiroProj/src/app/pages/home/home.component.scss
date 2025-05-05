@@ -1,16 +1,19 @@
 .hero {
   min-height: 100vh;
-  background: url('/Projeto_DEV/PrimeiroProj/src/assets/bg.jpg') no-repeat center center/cover;
+  background: url('/assets/win11.jpeg') no-repeat center center;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+ 
 
   .hero-content {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(185, 185, 185, 0.2);
     border-radius: 20px;
+    backdrop-filter: blur(12px);
     padding: 2.5rem;
     max-width: 500px;
+  -webkit-backdrop-filter: blur(40px);  
     width: 100%;
     text-align: left;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
