@@ -3,7 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/home/components/login/login.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
-
+import { NgModule } from '@angular/core';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent }
@@ -11,7 +11,7 @@ export const routes: Routes = [
 
 @NgModule({
     imports: [
-      // ... outros imports existentes
+      
       SocialLoginModule
     ],
     providers: [
@@ -30,3 +30,4 @@ export const routes: Routes = [
     ]
   })
   export class AppModule { }
+ 
